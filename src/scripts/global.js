@@ -7,22 +7,13 @@ const resultInput = document.getElementById('result')
 /* Accepted keys*/
 const allowedKeys = ["(", ")", "/", "*", "-", "+", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0", ".", "%", " "]
 
-/* Key value */
+/* Screen Key value */
 document.querySelectorAll('.charKey').forEach(function (charKeyBtn){
   charKeyBtn.addEventListener('click', function () {
     const value = charKeyBtn.dataset.value
     input.value += value
   })
 })
-
-/* Clear input */
-document.getElementById('clear').addEventListener('click', function () {
-  input.value = ''
-  input.focus()
-})
-
-/* Equal btn */
-document.getElementById('equal').addEventListener('click', calculate)
 
 /* Keyboard value */
 input.addEventListener('keydown', function (ev) {
@@ -38,6 +29,17 @@ input.addEventListener('keydown', function (ev) {
     calculate()
   }
 })
+
+/* Clear input */
+document.getElementById('clear').addEventListener('click', function () {
+  input.value = ''
+  input.focus()
+})
+
+/* Equal btn */
+document.getElementById('equal').addEventListener('click', calculate)
+
+
 
 /* Calculate function */
 function calculate() {
